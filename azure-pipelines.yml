@@ -48,6 +48,6 @@ stages:
     steps:
     - task: AzureWebAppContainer@1
       inputs:
-        azureSubscription: 'jashank1999'
+        azureSubscription: 'Jashan-Khaira'
         appName: 'helloazureapp-jashan'
         containers: '$(containerRegistry)/helloazureapp:$(Build.BuildId)'
