@@ -48,6 +48,6 @@ stages:
     steps:
     - task: AzureWebAppContainer@1
       inputs:
-        azureSubscription: 'jashank'
+        azureSubscription: 'Your-Azure-Subscription-Connection'
         appName: 'helloazureapp-jashan'
-        containers: '$(containerRegistry)/helloazureapp:$(Build.BuildId)'
+        containers: '$(containerRegistry)/$(imageRepository):$(tag)'
