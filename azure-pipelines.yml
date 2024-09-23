@@ -37,3 +37,17 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+
+- stage: Deploy
+  displayName: Deploy to Azure Web App
+  jobs:
+  - job: Deploy
+    displayName: Deploy
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: AzureWebAppContainer@1
+      inputs:
+        azureSubscription: 'jashank1999'
+        appName: 'helloazureapp-jashan'
+        containers: '$(containerRegistry)/helloazureapp:$(Build.BuildId)'
